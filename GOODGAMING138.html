@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>SLOT GACOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root {
+      --brand-red: #e53935;
+      --brand-yellow: #ffcc00;
+      --bg-dark: #212121;
+      --text-light: #ffffff;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      height: 100%;
+      overflow: hidden;
+      color: var(--text-light);
+    }
+
+    /* Video background */
+    .video-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Overlay hitam semi-transparan */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+      animation: slideDown 0.7s ease-out;
+    }
+
+    p {
+      margin: 0.4rem 0 1.6rem;
+      font-size: 1.1rem;
+      max-width: 28rem;
+      animation: fadeIn 1s ease-out 0.4s both;
+    }
+
+    .promo-img {
+      max-width: 90%;
+      border-radius: 12px;
+      margin: 1rem auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1s ease-out 0.6s both;
+    }
+
+    .btn-daftar {
+      display:inline-block;
+      padding: 14px 32px;
+      background: var(--brand-red);
+      color: #fff;
+      text-decoration:none;
+      font-weight: 700;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.35);
+      transition: transform .2s ease, background .2s ease;
+      animation: popIn 0.6s ease-out 0.8s both;
+    }
+
+    .btn-daftar:hover {
+      background:#c62828;
+      transform: translateY(-3px);
+    }
+
+    @keyframes slideDown{from{transform:translateY(-40px);opacity:0}to{transform:translateY(0);opacity:1}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes popIn{0%{opacity:0;transform:scale(.5)}80%{transform:scale(1.05)}100%{opacity:1;transform:scale(1)}}
+
+    audio{display:none}
+
+    .music-note{
+      position:fixed;
+      bottom:16px;
+      right:16px;
+      font-size:1.5rem;
+      cursor:pointer;
+      user-select:none;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- VIDEO BACKGROUND -->
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="https://res.cloudinary.com/dfpptqyzn/video/upload/v1748604579/8f562b4e8e138c7b3e0854cd97339b63_lw2j6a.mp4" type="video/mp4">
+    Browser tidak mendukung video.
+  </video>
+
+  <!-- KONTEN -->
+  <img class="promo-img" src="https://res.cloudinary.com/dfpptqyzn/image/upload/v1748596407/Untitled_design__4_-removebg-preview_jp2zcf.png" alt="SLOT GACOR">
+  <p>ＤＥＰＯ－－>ＭＡＩＮ－－>ＷＤ－－>ＳＥＷＡ ＬＣ！</p>
+  <a class="btn-daftar" href="https://cutt.ly/irb9OlC3" target="_blank" rel="noopener">Daftar&nbsp;Sekarang</a>
+
+  <!-- AUDIO -->
+  <audio id="bgmusic" loop>
+    <source src="https://voca.ro/1aDFT4j5Rkwy" type="audio/mpeg">
+    Browser Anda tidak mendukung audio.
+  </audio>
+  <div class="music-note" id="musicToggle">🎵</div>
+
+  <script>
+    (function(){
+      const audio = document.getElementById('bgmusic');
+      const toggle = document.getElementById('musicToggle');
+
+      toggle.addEventListener('click', () => {
+        audio.muted = !audio.muted;
+        toggle.textContent = audio.muted ? '🔇' : '🎵';
+        if (!audio.paused) return;
+        audio.play();
+      });
+
+      // Autoplay on user interaction
+      document.addEventListener('click', () => {
+        audio.play().catch(() => {});
+      }, { once: true });
+    })();
+  </script>
+</body>
+</html>
